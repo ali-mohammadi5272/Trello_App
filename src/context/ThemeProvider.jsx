@@ -27,7 +27,7 @@ const ThemeProvider = ({ children }) => {
         setThemeLight,
       }}
     >
-      <div className="App" data-theme={theme}>
+      <div id="App" data-theme={theme}>
         {children}
       </div>
     </ThemeContext.Provider>
