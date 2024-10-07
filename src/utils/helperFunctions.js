@@ -9,4 +9,8 @@ const getLocalStorageData = (key) => {
   return data;
 };
 
-export { setCookie, getLocalStorageData };
+const setLocalStorageData = (key, value) => {
+  localStorage.setItem(key, JSON.stringify(value));
+};
+
+export { setCookie, getLocalStorageData, setLocalStorageData };
