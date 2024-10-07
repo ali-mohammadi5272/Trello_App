@@ -37,6 +37,13 @@ const showErrors = (errorsObject) => {
   errors.forEach((error) => toast.error(error.message));
 };
 
+const isFormEmpty = (dataObject) => {
+  const isNotEmpty = Object.entries(dataObject).some(([_, value]) =>
+    value.trim()
+  );
+  return !isNotEmpty;
+};
+
 export {
   setCookie,
   getLocalStorageData,
@@ -44,4 +51,5 @@ export {
   createUser,
   isUserExistBeforeInDB,
   showErrors,
+  isFormEmpty,
 };
