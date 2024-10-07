@@ -13,4 +13,12 @@ const setLocalStorageData = (key, value) => {
   localStorage.setItem(key, JSON.stringify(value));
 };
 
-export { setCookie, getLocalStorageData, setLocalStorageData };
+const createUser = (data) => {
+  const user = {
+    id: crypto.randomUUID() + Date.now(),
+    ...data,
+  };
+  return user;
+};
+
+export { setCookie, getLocalStorageData, setLocalStorageData, createUser };
