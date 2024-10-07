@@ -1,0 +1,25 @@
+.page {
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__title {
+    font-size: 200px;
+    margin: 50px 0px;
+    color: firebrick;
+  }
+  &__description {
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+  &__link {
+    font-size: 30px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
