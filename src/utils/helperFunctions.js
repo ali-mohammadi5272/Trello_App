@@ -4,4 +4,9 @@ const setCookie = (cookie) => {
   document.cookie = `${key}=${value}; max-age=${maxAge}; path=${path}`;
 };
 
-export { setCookie };
+const getLocalStorageData = (key) => {
+  const data = JSON.parse(localStorage.getItem(key));
+  return data;
+};
+
+export { setCookie, getLocalStorageData };
