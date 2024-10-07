@@ -1,0 +1,39 @@
+#App {
+  --color-dark: #000000;
+  --color-light: #ffffff;
+  --color-success: #30b630;
+  --color-danger: #dc143c;
+  --color-warning: #f5cd47;
+  --color-info: #6495ed;
+
+  --toggleThemeBtn-position: 10px;
+  --toggleThemeBtn-fontSize: 30px;
+  --pageTitle-fontSize: 50px;
+  --input-padding: 10px;
+  --input-fontSize: 30px;
+  --input-height: 65px;
+}
+
+#App[data-theme="LIGHT"] {
+  --text-primary: #000000;
+  --text-secondary: #ffffff;
+  --text-tertiary: #505050;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f2f2f2;
+  --bg-tertiary: #505050;
+  --border-color-primary: #000000;
+  --border-color-secondary: #ffffff;
+  --border-color-tertiary: #505050;
+}
+
+#App[data-theme="DARK"] {
+  --text-primary: #ffffff;
+  --text-secondary: #222222;
+  --text-tertiary: #3a3a3a;
+  --bg-primary: #000000;
+  --bg-secondary: #222222;
+  --bg-tertiary: #3a3a3a;
+  --border-color-primary: #ffffff;
+  --border-color-secondary: #222222;
+  --border-color-tertiary: #3a3a3a;
+}
