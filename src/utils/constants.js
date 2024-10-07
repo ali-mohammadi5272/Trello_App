@@ -9,11 +9,11 @@ const dbDefaultTables = {
   rows: [],
 };
 
-const messages = {
+const authMessages = {
   register: {
     success: "Congratulations 🥳. You have registered successfully",
     error: "You have already registered with this Username or Email !!",
   },
 };
 
-export { themes, dbDefaultTables, messages };
+export { themes, dbDefaultTables, authMessages };
