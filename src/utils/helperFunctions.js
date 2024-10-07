@@ -64,6 +64,11 @@ const logOut = () => {
   });
 };
 
+const getCookie = (key) => {
+  const cookie = document.cookie.split(`${key}=`)[1];
+  return cookie;
+};
+
 export {
   setCookie,
   getLocalStorageData,
@@ -74,4 +79,5 @@ export {
   isFormEmpty,
   yupParsedErrors,
   logOut,
+  getCookie,
 };
