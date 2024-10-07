@@ -1,0 +1,20 @@
+.taskContainer {
+  padding: 10px;
+}
+.task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  cursor: grab;
+  background-color: var(--bg-secondary);
+  // background-color: lightgray;
+  border-radius: 10px;
+  padding: 20px;
+  &:active {
+    cursor: grabbing;
+  }
+  &__title {
+    font-size: 30px;
+  }
+}
