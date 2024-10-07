@@ -1,0 +1,28 @@
+%input {
+  width: 100%;
+  padding: var(--input-padding);
+  font-size: var(--input-fontSize);
+  height: var(--input-height);
+}
+
+.form {
+  width: 50%;
+  &__label {
+    position: relative;
+    margin: 10px 0px;
+    width: 100%;
+    display: block;
+  }
+  &__input {
+    @extend %input;
+  }
+  &__submitBtn {
+    @extend %input;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0px;
+  }
+}
