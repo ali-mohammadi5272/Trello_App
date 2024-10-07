@@ -12,7 +12,7 @@ const registerSchema = Yup.object().shape({
   username: Yup.string()
     .min(3, username.min)
     .required(username.required)
-    .matches(usernamePattern),
+    .matches(usernamePattern, username.pattern),
 
   email: Yup.string()
     .min(5, email.min)
