@@ -76,6 +76,17 @@ const getUserByIdFromDB = (id) => {
   return user;
 };
 
+const createColumn = (userId, title) => {
+  const column = {
+    id: crypto.randomUUID() + Date.now(),
+    title,
+    userId,
+    createdAt: new Date(),
+  };
+
+  return column;
+};
+
 export {
   setCookie,
   getLocalStorageData,
@@ -88,4 +99,5 @@ export {
   removeCookie,
   getCookie,
   getUserByIdFromDB,
+  createColumn,
 };
