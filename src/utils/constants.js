@@ -6,7 +6,7 @@ const themes = {
 const dbDefaultTables = {
   users: [],
   columns: [],
-  rows: [],
+  tasks: [],
 };
 
 const authMessages = {
