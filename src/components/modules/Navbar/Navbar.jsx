@@ -13,7 +13,7 @@ const Navbar = () => {
       title: "Log Out",
       text: "Log out?",
       icon: "warning",
-      buttons: ["Yes", "No"],
+      buttons: ["No", "Yes"],
     }).then((result) => {
       if (result) {
         removeCookie("currentUser");
