@@ -44,6 +44,17 @@ const isFormEmpty = (dataObject) => {
   return !isNotEmpty;
 };
 
+const yupParsedErrors = (err) => {
+  const parsedErrors = err.inner.reduce(
+    (prev, current) => ({
+      ...prev,
+      [current.path]: current.message,
+    }),
+    {}
+  );
+  return parsedErrors;
+};
+
 export {
   setCookie,
   getLocalStorageData,
@@ -52,4 +63,5 @@ export {
   isUserExistBeforeInDB,
   showErrors,
   isFormEmpty,
+  yupParsedErrors,
 };
