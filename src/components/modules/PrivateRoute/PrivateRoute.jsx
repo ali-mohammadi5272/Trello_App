@@ -1,20 +1,25 @@
 import { Navigate } from "react-router-dom";
 import { getCookie, getUserByIdFromDB } from "../../../utils/helperFunctions";
-import { useContext, useEffect } from "react";
+import { useContext, useLayoutEffect, useState } from "react";
 import { AuthContext } from "../../../context/AuthProvider";
 
 const PrivateRoute = ({ children }) => {
-  const cookie = getCookie("currentUser");
-  const findedUser = getUserByIdFromDB(cookie);
-  const { user, setUser } = useContext(AuthContext);
+  const [isLogedIn, setIsLoggedIn] = useState(true);
+  const { setUser } = useContext(AuthContext);
 
-  useEffect(() => {
-    if (findedUser && !user) {
-      setUser(findedUser);
+  useLayoutEffect(() => {
+    const cookie = getCookie("currentUser");
+    if (!cookie) {
+      setIsLoggedIn(false);
     }
+    const findedUser = getUserByIdFromDB(cookie);
+    if (!findedUser) {
+      setIsLoggedIn(false);
+    }
+    setUser(findedUser);
   }, []);
 
-  return cookie && findedUser ? children : <Navigate to="/login" />;
+  return isLogedIn ? children : <Navigate to="/login" />;
 };
 
 export default PrivateRoute;
