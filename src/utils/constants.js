@@ -14,6 +14,11 @@ const authMessages = {
     success: "Congratulations 🥳. You have registered successfully",
     error: "You have already registered with this Username or Email !!",
   },
+  login: {
+    success: "You have logged in successfully",
+    userNotFound: "User not found !!",
+    invalidPasswordOrEmail: "Username/Email or Password is not valid !!",
+  },
 };
 
 const yupMessages = {
