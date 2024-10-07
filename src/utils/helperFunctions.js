@@ -69,6 +69,12 @@ const getCookie = (key) => {
   return cookie;
 };
 
+const getUserByIdFromDB = (id) => {
+  const { users } = getLocalStorageData("db");
+  const user = users.find((user) => user.id === id);
+  return user;
+};
+
 export {
   setCookie,
   getLocalStorageData,
@@ -80,4 +86,5 @@ export {
   yupParsedErrors,
   removeCookie,
   getCookie,
+  getUserByIdFromDB,
 };
