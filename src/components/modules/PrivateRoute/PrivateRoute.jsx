@@ -8,8 +8,8 @@ const PrivateRoute = ({ children }) => {
   const { setUser } = useContext(AuthContext);
 
   useLayoutEffect(() => {
-    const cookie = getCookie("currentUser");
     try {
+      const cookie = getCookie("currentUser");
       if (!cookie) {
         setIsLoggedIn(false);
       }
