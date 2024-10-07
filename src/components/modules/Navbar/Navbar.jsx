@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <dv className={styles.navbarContainer}>
+    <div className={styles.navbarContainer}>
       <Container>
         <nav className={`${styles.navbarContainer__navbar} ${styles.navbar}`}>
           <section className={styles.navbar__section}>
