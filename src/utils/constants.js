@@ -3,7 +3,7 @@ const themes = {
   DARK: "DARK",
 };
 
-const dbDefaultTablesValues = {
+const dbDefaultTables = {
   users: [],
   columns: [],
   rows: [],
@@ -16,4 +16,4 @@ const messages = {
   },
 };
 
-export { themes, dbDefaultTablesValues, messages };
+export { themes, dbDefaultTables, messages };
