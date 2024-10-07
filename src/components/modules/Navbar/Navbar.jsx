@@ -4,9 +4,12 @@ import ToggleThemeBtn from "../ToggleThemeBtn/ToggleThemeBtn";
 import styles from "./Navbar.module.scss";
 import { removeCookie } from "../../../utils/helperFunctions";
 import swal from "sweetalert";
+import { AuthContext } from "../../../context/AuthProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { setUser } = useContext(AuthContext);
 
   const logOutHandler = () => {
     swal({
@@ -17,6 +20,7 @@ const Navbar = () => {
     }).then((result) => {
       if (result) {
         removeCookie("currentUser");
+        setUser(null);
         navigate("/login");
       }
     });
@@ -40,7 +44,7 @@ const Navbar = () => {
           </section>
         </nav>
       </Container>
-    </dv>
+    </div>
   );
 };
 
