@@ -87,6 +87,17 @@ const createColumn = (userId, title) => {
   return column;
 };
 
+const createTask = (columnId, title) => {
+  const task = {
+    id: crypto.randomUUID() + Date.now(),
+    title,
+    columnId,
+    createdAt: new Date(),
+  };
+
+  return task;
+};
+
 export {
   setCookie,
   getLocalStorageData,
@@ -100,4 +111,5 @@ export {
   getCookie,
   getUserByIdFromDB,
   createColumn,
+  createTask,
 };
