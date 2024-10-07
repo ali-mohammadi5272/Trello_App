@@ -21,4 +21,17 @@ const createUser = (data) => {
   return user;
 };
 
-export { setCookie, getLocalStorageData, setLocalStorageData, createUser };
+const isUserExistBeforeInDB = (db, newUser) => {
+  const isUserExistBefore = !!db.users.find(
+    (user) => user.username === newUser.username || user.email === newUser.email
+  );
+  return isUserExistBefore;
+};
+
+export {
+  setCookie,
+  getLocalStorageData,
+  setLocalStorageData,
+  createUser,
+  isUserExistBeforeInDB,
+};
