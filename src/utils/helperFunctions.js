@@ -18,6 +18,7 @@ const setLocalStorageData = (key, value) => {
 const createUser = (data) => {
   const user = {
     id: crypto.randomUUID() + Date.now(),
+    createdAt: new Date(),
     ...data,
   };
   return user;
