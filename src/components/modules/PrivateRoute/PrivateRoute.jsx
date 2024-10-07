@@ -9,14 +9,18 @@ const PrivateRoute = ({ children }) => {
 
   useLayoutEffect(() => {
     const cookie = getCookie("currentUser");
-    if (!cookie) {
+    try {
+      if (!cookie) {
+        setIsLoggedIn(false);
+      }
+      const findedUser = getUserByIdFromDB(cookie);
+      if (!findedUser) {
+        setIsLoggedIn(false);
+      }
+      setUser(findedUser);
+    } catch (error) {
       setIsLoggedIn(false);
     }
-    const findedUser = getUserByIdFromDB(cookie);
-    if (!findedUser) {
-      setIsLoggedIn(false);
-    }
-    setUser(findedUser);
   }, []);
 
   return isLogedIn ? children : <Navigate to="/login" />;
