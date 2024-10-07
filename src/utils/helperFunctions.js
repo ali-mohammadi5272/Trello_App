@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const setCookie = (cookie) => {
   const { key, value, maxAge, path } = cookie;
 
@@ -28,10 +30,18 @@ const isUserExistBeforeInDB = (db, newUser) => {
   return isUserExistBefore;
 };
 
+const showErrors = (errorsObject) => {
+  const errors = Object.entries(errorsObject).map(([_, value]) => ({
+    message: value,
+  }));
+  errors.forEach((error) => toast.error(error.message));
+};
+
 export {
   setCookie,
   getLocalStorageData,
   setLocalStorageData,
   createUser,
   isUserExistBeforeInDB,
+  showErrors,
 };
