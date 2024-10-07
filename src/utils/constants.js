@@ -29,27 +29,27 @@ const yupMessages = {
   },
   register: {
     firstname: {
-      min: "firstname must be at least 3 characters !!",
-      required: "firstname is required !!",
+      min: "Firstname must be at least 3 characters !!",
+      required: "Firstname is required !!",
     },
     lastname: {
-      min: "lastname must be at least 3 characters !!",
-      required: "lastname is required !!",
+      min: "Lastname must be at least 3 characters !!",
+      required: "Lastname is required !!",
     },
     username: {
-      min: "username must be at least 3 characters !!",
-      required: "username is required !!",
+      min: "Username must be at least 3 characters !!",
+      required: "Username is required !!",
       pattern:
         "Username is not valid. Valid values are: john or john_doe or john_doe_john",
     },
     email: {
       min: "Email is not valid !!",
-      required: "email is required !!",
+      required: "Email is required !!",
       pattern: "Email is not valid !!",
     },
     password: {
-      min: "password must be at least 8 characters !!",
-      required: "password is required !!",
+      min: "Password must be at least 8 characters !!",
+      required: "Password is required !!",
     },
   },
 };
