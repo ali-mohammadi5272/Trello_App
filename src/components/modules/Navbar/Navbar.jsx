@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Container from "../Container/Container";
 import ToggleThemeBtn from "../ToggleThemeBtn/ToggleThemeBtn";
 import styles from "./Navbar.module.scss";
-import { logOut } from "../../../utils/helperFunctions";
+import { removeCookie } from "../../../utils/helperFunctions";
 import swal from "sweetalert";
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
       buttons: ["Yes", "No"],
     }).then((result) => {
       if (result) {
-        logOut();
+        removeCookie("currentUser");
         navigate("/login");
       }
     });
