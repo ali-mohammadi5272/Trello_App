@@ -55,9 +55,9 @@ const yupParsedErrors = (err) => {
   return parsedErrors;
 };
 
-const logOut = () => {
+const removeCookie = (key) => {
   setCookie({
-    key: "currentUser",
+    key,
     value: "",
     maxAge: 0,
     path: "/",
@@ -78,6 +78,6 @@ export {
   showErrors,
   isFormEmpty,
   yupParsedErrors,
-  logOut,
+  removeCookie,
   getCookie,
 };
