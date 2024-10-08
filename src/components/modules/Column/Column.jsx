@@ -36,6 +36,7 @@ const Column = ({ id, title }) => {
         setColumns(newColumns);
         setTasks(newTasks);
         swal({
+          title: "Successful",
           icon: "success",
           text: columnMessages.remove,
         });
