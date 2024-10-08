@@ -149,6 +149,7 @@ const Column = ({ id, title }) => {
           onChange={creatorTaskChange}
           onSubmit={createNewTaskHandler}
           data={task}
+          placeholder="Create a new task"
         />
       </section>
     </article>
