@@ -19,6 +19,7 @@ const Task = ({ id, title, columnId }) => {
 
   const removeTaskHandler = () => {
     swal({
+      title: "Remove Task",
       icon: "warning",
       text: `Remove ${title} Task?`,
       buttons: ["No", "Yes"],
