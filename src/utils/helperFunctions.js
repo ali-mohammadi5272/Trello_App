@@ -98,6 +98,17 @@ const createTask = (columnId, title) => {
   return task;
 };
 
+const insertDataBetweenArrayIndexes = (info) => {
+  const { firstItemIndex, secondItemIndex, data, array } = info;
+  const newArray = [
+    ...array.slice(0, firstItemIndex + 1),
+    data,
+    ...array.slice(secondItemIndex, array.length),
+  ];
+
+  return newArray;
+};
+
 export {
   setCookie,
   getLocalStorageData,
@@ -112,4 +123,5 @@ export {
   getUserByIdFromDB,
   createColumn,
   createTask,
+  insertDataBetweenArrayIndexes,
 };
