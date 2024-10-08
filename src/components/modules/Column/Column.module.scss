@@ -5,12 +5,25 @@
   border: 2px solid var(--text-primary);
   border-radius: 10px;
   overflow: hidden;
-  &__title {
+  &__header {
+    position: relative;
+    background-color: #482dd0;
     text-align: center;
     padding: 5px;
-    background-color: #700016;
+  }
+  &__title {
     color: #ffffff;
     font-size: 24px;
+  }
+  &__removeTaskBtn {
+    all: unset;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    cursor: pointer;
+    &:hover {
+      color: red;
+    }
   }
   &__tasks {
     flex-grow: 2;

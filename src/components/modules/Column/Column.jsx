@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import TaskCreator from "../ColumnAndTaskCreator/ColumnAndTaskCreator";
 import styles from "./Column.module.scss";
 import Task from "../Task/Task";
+import swal from "sweetalert";
+
 import {
   createTask,
   getLocalStorageData,
@@ -11,10 +13,34 @@ import {
 } from "../../../utils/helperFunctions";
 import DragArea from "../DragArea/DragArea";
 import { DBContext } from "../../../context/DBProvider";
+import FontAwesomeIcon from "../FontawesomeIcon/FontAwesomeIcon";
 
 const Column = ({ id, title }) => {
   const [task, setTask] = useState({ value: "" });
-  const { tasks, setTasks } = useContext(DBContext);
+  const { tasks, setTasks, columns, setColumns } = useContext(DBContext);
+
+  const removeColumnHandler = () => {
+    swal({
+      icon: "warning",
+      text: `Remove ${title} Column?`,
+      buttons: ["No", "Yes"],
+    }).then((result) => {
+      if (result) {
+        const db = getLocalStorageData("db");
+        const newColumns = columns.filter((column) => column.id !== id);
+        const newTasks = tasks.filter((task) => task.columnId !== id);
+        db.columns = newColumns;
+        db.tasks = newTasks;
+        setLocalStorageData("db", db);
+        setColumns(newColumns);
+        setTasks(newTasks);
+        swal({
+          icon: "success",
+          text: "Column removed successfully",
+        });
+      }
+    });
+  };
 
   const createNewTaskHandler = (e) => {
     e.preventDefault();
@@ -84,8 +110,15 @@ const Column = ({ id, title }) => {
   return (
     <article className={styles.column}>
       <section>
-        <header className={styles.column__title}>
-          <h3>{title}</h3>
+        <header className={styles.column__header}>
+          <h3 className={styles.column__title}>{title}</h3>
+          <button
+            type="button"
+            className={styles.column__removeTaskBtn}
+            onClick={removeColumnHandler}
+          >
+            <FontAwesomeIcon icon="faTrash" />
+          </button>
         </header>
       </section>
       <section className={styles.column__tasks}>
