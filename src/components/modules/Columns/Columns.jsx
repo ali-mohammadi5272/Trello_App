@@ -41,7 +41,7 @@ const Columns = () => {
         data={column}
         onChange={creatorColumnChange}
         onSubmit={createNewColumnHandler}
-        placeholder="Creare a new column"
+        placeholder="Creare a new Column"
       />
     </div>
   );
