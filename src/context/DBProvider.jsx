@@ -5,10 +5,10 @@ export const DBContext = createContext();
 
 const DBProvider = ({ children }) => {
   const [columns, setColumns] = useState(
-    () => getLocalStorageData("db").columns || []
+    () => getLocalStorageData("db")?.columns || []
   );
   const [tasks, setTasks] = useState(
-    () => getLocalStorageData("db").tasks || []
+    () => getLocalStorageData("db")?.tasks || []
   );
 
   return (
