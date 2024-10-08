@@ -2,6 +2,7 @@ import { useContext } from "react";
 import FontAwesomeIcon from "../FontawesomeIcon/FontAwesomeIcon";
 import styles from "./Task.module.scss";
 import { DBContext } from "../../../context/DBProvider";
+import swal from "sweetalert";
 import {
   getLocalStorageData,
   setLocalStorageData,
@@ -16,11 +17,23 @@ const Task = ({ id, title, columnId }) => {
   };
 
   const removeTaskHandler = () => {
-    const db = getLocalStorageData("db");
-    const newTasks = tasks.filter((task) => task.id !== id);
-    db.tasks = newTasks;
-    setLocalStorageData("db", db);
-    setTasks(newTasks);
+    swal({
+      icon: "warning",
+      text: `Remove ${title} Task?`,
+      buttons: ["No", "Yes"],
+    }).then((result) => {
+      if (result) {
+        const db = getLocalStorageData("db");
+        const newTasks = tasks.filter((task) => task.id !== id);
+        db.tasks = newTasks;
+        setLocalStorageData("db", db);
+        setTasks(newTasks);
+        swal({
+          icon: "success",
+          text: "Task removed successfully",
+        });
+      }
+    });
   };
 
   return (
