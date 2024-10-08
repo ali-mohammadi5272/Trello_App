@@ -14,7 +14,7 @@
   &__toggleThemBtn {
     position: absolute;
     top: var(--toggleThemeBtn-position);
-    right: var(--toggleThemeBtn-position);
+    left: var(--toggleThemeBtn-position);
     font-size: var(--toggleThemeBtn-fontSize);
   }
   &__linkSection {
