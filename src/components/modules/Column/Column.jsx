@@ -21,6 +21,7 @@ const Column = ({ id, title }) => {
 
   const removeColumnHandler = () => {
     swal({
+      title: "Remove Column",
       icon: "warning",
       text: `Remove ${title} Column?`,
       buttons: ["No", "Yes"],
