@@ -14,6 +14,15 @@
   --input-height: 65px;
 }
 
+@include mediaQuery(mobile) {
+  #App {
+    --pageTitle-fontSize: 35px;
+    --input-padding: 5px;
+    --input-fontSize: 15px;
+    --input-height: 35px;
+  }
+}
+
 #App[data-theme="LIGHT"] {
   --text-primary: #000000;
   --text-secondary: #ffffff;
