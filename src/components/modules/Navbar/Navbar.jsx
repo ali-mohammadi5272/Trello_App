@@ -34,9 +34,11 @@ const Navbar = () => {
             <ToggleThemeBtn className={styles.navbar__togglThemeBtn} />
           </section>
           <section className={styles.navbar__section}>
-            <h3 className={styles.navbar__user}>
-              {user.firstname} {user.lastname}
-            </h3>
+            {user && (
+              <h3 className={styles.navbar__user}>
+                {user.firstname} {user.lastname}
+              </h3>
+            )}
             <button
               onClick={logOutHandler}
               className={styles.navbar__logoutBtn}
