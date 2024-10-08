@@ -106,7 +106,9 @@ const Column = ({ id, title }) => {
                 </React.Fragment>
               )
           )}
-        <DragArea onDrop={(e) => onDropHandler(e, [1])} />
+        {tasks.filter((task) => task.columnId === id).length ? (
+          <DragArea onDrop={(e) => onDropHandler(e, [1])} />
+        ) : null}
       </section>
       <section>
         <TaskCreator
