@@ -18,6 +18,8 @@
     }
     &:last-child {
       text-align: left;
+      display: flex;
+      align-items: center;
     }
   }
   &__togglThemeBtn {
@@ -28,6 +30,12 @@
     &:hover {
       background-color: #180053;
     }
+  }
+  &__user {
+    color: white;
+    padding: 10px 20px;
+    font-size: var(--toggleThemeBtn-fontSize);
+    user-select: none;
   }
   &__logoutBtn {
     all: unset;
