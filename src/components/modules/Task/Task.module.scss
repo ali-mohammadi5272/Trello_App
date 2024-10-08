@@ -1,4 +1,5 @@
 .taskContainer {
+  position: relative;
   padding: 10px;
 }
 .task {
@@ -10,10 +11,22 @@
   background-color: var(--bg-secondary);
   border-radius: 10px;
   padding: 20px;
+  max-width: 100%;
+  overflow-x: auto;
   &:active {
     cursor: grabbing;
   }
   &__title {
     font-size: 30px;
+  }
+  &__removeTaskBtn {
+    all: unset;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    &:hover {
+      color: red;
+    }
   }
 }
