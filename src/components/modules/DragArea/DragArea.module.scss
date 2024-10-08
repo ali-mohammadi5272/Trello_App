@@ -1,0 +1,17 @@
+.dragAreaContainer {
+  padding: 10px;
+}
+.dragArea {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px dashed var(--text-primary);
+  height: 15px;
+  &_show {
+    height: 100px;
+    opacity: 1;
+    transition: all 0.25s linear;
+  }
+}
