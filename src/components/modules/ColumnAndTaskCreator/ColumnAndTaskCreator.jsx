@@ -2,7 +2,7 @@ import { isFormEmpty } from "../../../utils/helperFunctions";
 import FontAwesomeIcon from "../FontawesomeIcon/FontAwesomeIcon";
 import styles from "./ColumnAndTaskCreator.module.scss";
 
-const ColumnAndTaskCreator = ({ onSubmit, onChange, data }) => {
+const ColumnAndTaskCreator = ({ onSubmit, onChange, data, placeholder }) => {
   return (
     <form className={styles.form} onSubmit={onSubmit}>
       <input
@@ -10,6 +10,7 @@ const ColumnAndTaskCreator = ({ onSubmit, onChange, data }) => {
         onChange={onChange}
         type="text"
         className={styles.form__input}
+        placeholder={placeholder}
       />
       <button
         disabled={isFormEmpty(data)}
