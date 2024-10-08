@@ -1,3 +1,19 @@
+@import "./../../../assets/styles/abstracts/mixins";
+%btn {
+  all: unset;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+  font-size: var(--toggleThemeBtn-fontSize);
+  text-decoration: none;
+  border-radius: 10px;
+  &:hover {
+    background-color: #180053;
+  }
+}
+
 .navbarContainer {
   position: fixed;
   top: 0;
@@ -28,28 +44,49 @@
     font-weight: bold;
     font-size: var(--toggleThemeBtn-fontSize);
     border-radius: 10px;
-    &:hover {
-      background-color: #180053;
-    }
   }
   &__user {
     color: white;
     padding: 10px 20px;
     font-size: var(--toggleThemeBtn-fontSize);
     user-select: none;
+    @include mediaQuery(miniDesktop) {
+      display: none;
+    }
+  }
+  &__logoutBtn {
+    @extend %btn;
+    display: inline-block;
+    @include mediaQuery(miniDesktop) {
+      display: none;
+    }
+  }
+  &__offCanvasBtn {
+    @extend %btn;
+    display: none;
+    @include mediaQuery(miniDesktop) {
+      display: inline-block;
+    }
+  }
+}
+
+.offCanvasMenuContainer {
+}
+
+.offCanvasMenu {
+  position: relative;
+  color: white;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: white solid 1px;
   }
   &__logoutBtn {
     all: unset;
-    color: white;
-    padding: 10px 20px;
-    display: inline-block;
-    font-weight: bold;
+    font-size: 20px;
+    padding: 20px 0px;
     cursor: pointer;
-    font-size: var(--toggleThemeBtn-fontSize);
-    text-decoration: none;
-    border-radius: 10px;
-    &:hover {
-      background-color: #180053;
-    }
+    display: inline-block;
   }
 }
