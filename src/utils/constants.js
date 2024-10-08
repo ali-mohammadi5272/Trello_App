@@ -63,4 +63,15 @@ const taskMessages = {
   remove: "Task removed successfully",
 };
 
-export { themes, dbDefaultTables, authMessages, yupMessages, taskMessages };
+const columnMessages = {
+  remove: "Column removed successfully",
+};
+
+export {
+  themes,
+  dbDefaultTables,
+  authMessages,
+  yupMessages,
+  taskMessages,
+  columnMessages,
+};
