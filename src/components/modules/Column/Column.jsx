@@ -3,7 +3,10 @@ import TaskCreator from "../ColumnAndTaskCreator/ColumnAndTaskCreator";
 import styles from "./Column.module.scss";
 import Task from "../Task/Task";
 import swal from "sweetalert";
-
+import DragArea from "../DragArea/DragArea";
+import { DBContext } from "../../../context/DBProvider";
+import FontAwesomeIcon from "../FontawesomeIcon/FontAwesomeIcon";
+import { columnMessages } from "../../../utils/constants";
 import {
   createTask,
   getLocalStorageData,
@@ -11,9 +14,6 @@ import {
   isFormEmpty,
   setLocalStorageData,
 } from "../../../utils/helperFunctions";
-import DragArea from "../DragArea/DragArea";
-import { DBContext } from "../../../context/DBProvider";
-import FontAwesomeIcon from "../FontawesomeIcon/FontAwesomeIcon";
 
 const Column = ({ id, title }) => {
   const [task, setTask] = useState({ value: "" });
@@ -36,7 +36,7 @@ const Column = ({ id, title }) => {
         setTasks(newTasks);
         swal({
           icon: "success",
-          text: "Column removed successfully",
+          text: columnMessages.remove,
         });
       }
     });
