@@ -31,6 +31,7 @@ const Task = ({ id, title, columnId }) => {
         setLocalStorageData("db", db);
         setTasks(newTasks);
         swal({
+          title: "Successful",
           icon: "success",
           text: taskMessages.remove,
         });
