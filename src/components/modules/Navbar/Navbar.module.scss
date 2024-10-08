@@ -27,6 +27,7 @@
     color: white;
     font-weight: bold;
     font-size: var(--toggleThemeBtn-fontSize);
+    border-radius: 10px;
     &:hover {
       background-color: #180053;
     }
@@ -46,6 +47,7 @@
     cursor: pointer;
     font-size: var(--toggleThemeBtn-fontSize);
     text-decoration: none;
+    border-radius: 10px;
     &:hover {
       background-color: #180053;
     }
