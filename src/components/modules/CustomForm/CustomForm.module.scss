@@ -1,3 +1,5 @@
+@import "./../../../assets/styles/abstracts/mixins";
+
 %input {
   width: 100%;
   padding: var(--input-padding);
@@ -7,6 +9,9 @@
 
 .form {
   width: 50%;
+  @include mediaQuery(miniDesktop) {
+    width: 90%;
+  }
   &__label {
     position: relative;
     margin: 10px 0px;
