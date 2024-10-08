@@ -3,6 +3,7 @@ import FontAwesomeIcon from "../FontawesomeIcon/FontAwesomeIcon";
 import styles from "./Task.module.scss";
 import { DBContext } from "../../../context/DBProvider";
 import swal from "sweetalert";
+import { taskMessages } from "../../../utils/constants";
 import {
   getLocalStorageData,
   setLocalStorageData,
@@ -30,7 +31,7 @@ const Task = ({ id, title, columnId }) => {
         setTasks(newTasks);
         swal({
           icon: "success",
-          text: "Task removed successfully",
+          text: taskMessages.remove,
         });
       }
     });
