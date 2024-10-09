@@ -40,7 +40,7 @@
     }
   }
   &__togglThemeBtn {
-    padding: 10px 20px;
+    padding: 10px 0px;
     color: white;
     font-weight: bold;
     font-size: var(--toggleThemeBtn-fontSize);
@@ -48,7 +48,7 @@
   }
   &__user {
     color: white;
-    padding: 10px 20px;
+    padding: 10px 0px;
     font-size: var(--toggleThemeBtn-fontSize);
     user-select: none;
     @include mediaQuery(miniDesktop) {
