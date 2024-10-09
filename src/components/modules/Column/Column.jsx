@@ -20,28 +20,52 @@ const Column = ({ id, title }) => {
   const { tasks, setTasks, columns, setColumns } = useContext(DBContext);
 
   const removeColumnHandler = () => {
-    swal({
-      title: "Remove Column",
-      icon: "warning",
-      text: `Remove ${title} Column?`,
-      buttons: ["No", "Yes"],
-    }).then((result) => {
-      if (result) {
-        const db = getLocalStorageData("db");
-        const newColumns = columns.filter((column) => column.id !== id);
-        const newTasks = tasks.filter((task) => task.columnId !== id);
-        db.columns = newColumns;
-        db.tasks = newTasks;
-        setLocalStorageData("db", db);
-        setColumns(newColumns);
-        setTasks(newTasks);
-        swal({
-          title: "Successful",
-          icon: "success",
-          text: columnMessages.remove,
-        });
-      }
-    });
+    const columnTasks = tasks.filter((task) => task.columnId === id);
+    if (columnTasks.length) {
+      swal({
+        title: "Remove Column",
+        icon: "warning",
+        text: `${title} has some Tasks. Do you want to remove ${title} Column with all the Tasks?`,
+        buttons: ["No", "Yes"],
+      }).then((result) => {
+        if (result) {
+          const db = getLocalStorageData("db");
+          const newColumns = columns.filter((column) => column.id !== id);
+          db.columns = newColumns;
+          setLocalStorageData("db", db);
+          setColumns(newColumns);
+          swal({
+            title: "Successful",
+            icon: "success",
+            text: columnMessages.remove,
+          });
+        }
+      });
+    }
+    else {
+      swal({
+        title: "Remove Column",
+        icon: "warning",
+        text: `Remove ${title} Column?`,
+        buttons: ["No", "Yes"],
+      }).then((result) => {
+        if (result) {
+          const db = getLocalStorageData("db");
+          const newColumns = columns.filter((column) => column.id !== id);
+          const newTasks = tasks.filter((task) => task.columnId !== id);
+          db.columns = newColumns;
+          db.tasks = newTasks;
+          setLocalStorageData("db", db);
+          setColumns(newColumns);
+          setTasks(newTasks);
+          swal({
+            title: "Successful",
+            icon: "success",
+            text: columnMessages.remove,
+          });
+        }
+      });
+    }
   };
 
   const createNewTaskHandler = (e) => {
