@@ -76,17 +76,23 @@
 .offCanvasMenu {
   position: relative;
   color: white;
+  padding: 0px 15px;
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: white solid 1px;
+    padding: 5px 0px 10px;
+    font-size: 20px;
+  }
+  &__closeOffCanvasBtn {
+    all: unset;
+    cursor: pointer;
   }
   &__logoutBtn {
     all: unset;
     font-size: 20px;
     padding: 20px 0px;
     cursor: pointer;
-    display: inline-block;
   }
 }

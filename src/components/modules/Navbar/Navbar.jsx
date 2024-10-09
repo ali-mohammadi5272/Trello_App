@@ -78,7 +78,7 @@ const Navbar = () => {
             )}
             <button
               onClick={offCanvasMenuHnadler}
-              className={styles.navbar__offCanvasBtn}
+              className={styles.offCanvasMenu__closeOffCanvasBtn}
             >
               <FontAwesomeIcon icon="faXmark" />
             </button>
