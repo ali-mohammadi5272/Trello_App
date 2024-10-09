@@ -1,18 +1,4 @@
 @import "./../../../assets/styles/abstracts/mixins";
-%btn {
-  all: unset;
-  color: white;
-  padding: 10px 20px;
-  font-weight: bold;
-  user-select: none;
-  cursor: pointer;
-  font-size: var(--toggleThemeBtn-fontSize);
-  text-decoration: none;
-  border-radius: 10px;
-  &:hover {
-    background-color: #180053;
-  }
-}
 
 .navbarContainer {
   position: fixed;
@@ -56,14 +42,14 @@
     }
   }
   &__logoutBtn {
-    @extend %btn;
+    padding: 10px 0px;
     display: inline-block;
     @include mediaQuery(miniDesktop) {
       display: none;
     }
   }
   &__offCanvasBtn {
-    @extend %btn;
+    padding: 10px 0px;
     display: none;
     @include mediaQuery(miniDesktop) {
       display: inline-block;
