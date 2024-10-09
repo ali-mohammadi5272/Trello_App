@@ -9,6 +9,7 @@ import { useContext, useState } from "react";
 import OffCanvasMenu from "../OffCanvasMenu/OffCanvasMenu";
 import FontAwesomeIcon from "../FontawesomeIcon/FontAwesomeIcon";
 import User from "../User/User";
+import Button from "../Button/Button";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -44,19 +45,16 @@ const Navbar = () => {
             </section>
             <section className={styles.navbar__section}>
               <User user={user} className={styles.navbar__user} />
-              <button
+              <Button
                 onClick={logOutHandler}
                 className={styles.navbar__logoutBtn}
-                to="/login"
-              >
-                Sign Out
-              </button>
-              <button
+                title="Sign Out"
+              />
+              <Button
                 onClick={offCanvasMenuHnadler}
                 className={styles.navbar__offCanvasBtn}
-              >
-                <FontAwesomeIcon icon="faBars" />
-              </button>
+                title={<FontAwesomeIcon icon="faBars" />}
+              />
             </section>
           </nav>
         </Container>
@@ -69,20 +67,17 @@ const Navbar = () => {
         <div className={styles.offCanvasMenu}>
           <header className={styles.offCanvasMenu__header}>
             <User user={user} className={styles.offCanvasMenu__user} />
-            <button
+            <Button
               onClick={offCanvasMenuHnadler}
               className={styles.offCanvasMenu__closeOffCanvasBtn}
-            >
-              <FontAwesomeIcon icon="faXmark" />
-            </button>
+              title={<FontAwesomeIcon icon="faXmark" />}
+            />
           </header>
-          <button
+          <Button
             onClick={logOutHandler}
             className={styles.offCanvasMenu__logoutBtn}
-            to="/login"
-          >
-            Sign Out
-          </button>
+            title="Sign Out"
+          />
         </div>
       </OffCanvasMenu>
     </>
