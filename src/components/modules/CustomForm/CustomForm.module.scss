@@ -7,6 +7,16 @@
   height: var(--input-height);
   background-color: var(--bg-secondary);
   color: var(--text-primary);
+  border: none;
+  border-radius: 5px;
+  &:disabled {
+    background-color: var(--bg-tertiary);
+    color: var(--text-tertiary);
+    &:hover {
+      background-color: var(--bg-tertiary);
+      color: var(--text-tertiary);
+    }
+  }
 }
 
 .form {
@@ -31,5 +41,10 @@
     justify-content: center;
     align-items: center;
     margin: 40px 0px;
+    &:hover {
+      background-color: var(--color-success);
+      border-color: var(--color-success);
+      color: white;
+    }
   }
 }
