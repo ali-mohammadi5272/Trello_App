@@ -31,9 +31,12 @@ const Column = ({ id, title }) => {
         if (result) {
           const db = getLocalStorageData("db");
           const newColumns = columns.filter((column) => column.id !== id);
+          const newTasks = tasks.filter((task) => task.columnId !== id);
           db.columns = newColumns;
+          db.tasks = newTasks;
           setLocalStorageData("db", db);
           setColumns(newColumns);
+          setTasks(newTasks);
           swal({
             title: "Successful",
             icon: "success",
@@ -52,12 +55,9 @@ const Column = ({ id, title }) => {
         if (result) {
           const db = getLocalStorageData("db");
           const newColumns = columns.filter((column) => column.id !== id);
-          const newTasks = tasks.filter((task) => task.columnId !== id);
           db.columns = newColumns;
-          db.tasks = newTasks;
           setLocalStorageData("db", db);
           setColumns(newColumns);
-          setTasks(newTasks);
           swal({
             title: "Successful",
             icon: "success",
@@ -102,7 +102,6 @@ const Column = ({ id, title }) => {
         db.tasks = newTasks;
         setLocalStorageData("db", db);
       }
-      //
       else if (tasksIndexes[0] === 1) {
         const convertedTasks = [...columnTasks, draggedTask].filter(
           (task, index) =>
@@ -114,7 +113,6 @@ const Column = ({ id, title }) => {
         setLocalStorageData("db", db);
       }
     }
-    //
     else if (tasksIndexes.length === 2) {
       const info = {
         firstItemIndex: tasksIndexes[0],
