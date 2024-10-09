@@ -1,11 +1,6 @@
-import { useEffect } from "react";
 import styles from "./OffCanvasMenu.module.scss";
 
 const OffCanvasMenu = ({ show, offCanvasBtnClick, children, className }) => {
-  useEffect(() => {
-    console.log(show);
-  }, [show]);
-
   return (
     <>
       <aside
