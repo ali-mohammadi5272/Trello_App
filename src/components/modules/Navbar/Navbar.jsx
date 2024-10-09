@@ -62,14 +62,12 @@ const Navbar = () => {
       <OffCanvasMenu
         show={showOfCanvas}
         offCanvasBtnClick={offCanvasMenuHnadler}
-        className={styles.offCanvasMenuContainer}
       >
         <div className={styles.offCanvasMenu}>
           <header className={styles.offCanvasMenu__header}>
             <User user={user} className={styles.offCanvasMenu__user} />
             <Button
               onClick={offCanvasMenuHnadler}
-              className={styles.offCanvasMenu__closeOffCanvasBtn}
               title={<FontAwesomeIcon icon="faXmark" />}
             />
           </header>
