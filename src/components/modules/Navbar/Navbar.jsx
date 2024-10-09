@@ -8,6 +8,7 @@ import { AuthContext } from "../../../context/AuthProvider";
 import { useContext, useState } from "react";
 import OffCanvasMenu from "../OffCanvasMenu/OffCanvasMenu";
 import FontAwesomeIcon from "../FontawesomeIcon/FontAwesomeIcon";
+import User from "../User/User";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -42,11 +43,7 @@ const Navbar = () => {
               <ToggleThemeBtn className={styles.navbar__togglThemeBtn} />
             </section>
             <section className={styles.navbar__section}>
-              {user && (
-                <h3 className={styles.navbar__user}>
-                  {user.firstname} {user.lastname}
-                </h3>
-              )}
+              <User user={user} className={styles.navbar__user} />
               <button
                 onClick={logOutHandler}
                 className={styles.navbar__logoutBtn}
@@ -71,11 +68,7 @@ const Navbar = () => {
       >
         <div className={styles.offCanvasMenu}>
           <header className={styles.offCanvasMenu__header}>
-            {user && (
-              <h3 className={styles.offCanvasMenu__user}>
-                {user.firstname} {user.lastname}
-              </h3>
-            )}
+            <User user={user} className={styles.offCanvasMenu__user} />
             <button
               onClick={offCanvasMenuHnadler}
               className={styles.offCanvasMenu__closeOffCanvasBtn}
