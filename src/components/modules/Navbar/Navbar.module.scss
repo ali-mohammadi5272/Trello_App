@@ -70,9 +70,10 @@
     font-size: 20px;
   }
   &__logoutBtn {
-    all: unset;
-    font-size: 20px;
     padding: 20px 0px;
-    cursor: pointer;
   }
+}
+
+button.offCanvasMenu__logoutBtn {
+  font-size: 20px;
 }
