@@ -41,7 +41,7 @@
       display: none;
     }
   }
-  &__logoutBtn {
+  &__signOutBtn {
     padding: 10px 0px;
     display: inline-block;
     @include mediaQuery(miniDesktop) {
@@ -69,11 +69,11 @@
     padding: 5px 0px 10px;
     font-size: 20px;
   }
-  &__logoutBtn {
+  &__signOutBtn {
     padding: 20px 0px;
   }
 }
 
-button.offCanvasMenu__logoutBtn {
+button.offCanvasMenu__signOutBtn {
   font-size: 20px;
 }

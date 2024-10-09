@@ -47,7 +47,7 @@ const Navbar = () => {
               <User user={user} className={styles.navbar__user} />
               <Button
                 onClick={logOutHandler}
-                className={styles.navbar__logoutBtn}
+                className={styles.navbar__signOutBtn}
                 title="Sign Out"
               />
               <Button
@@ -73,7 +73,7 @@ const Navbar = () => {
           </header>
           <Button
             onClick={logOutHandler}
-            className={styles.offCanvasMenu__logoutBtn}
+            className={styles.offCanvasMenu__signOutBtn}
             title="Sign Out"
           />
         </div>
